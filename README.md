@@ -1,5 +1,3 @@
-# 박한규
-
 # 개요
 
 ![Untitled](./Untitled.png)
