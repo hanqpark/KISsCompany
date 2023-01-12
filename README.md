@@ -2,9 +2,7 @@
 
 # 개요
 
-![Untitled](%E1%84%87%E1%85%A1%E1%86%A8%E1%84%92%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B2%20392f924856dd46ebbc31cbaa369d4d3f/Untitled.png)
-
-[GitHub - hanqpark/KISsCompany: FY2022 한국투자증권 금융데이터 활용 토이 프로젝트 진행](https://github.com/hanqpark/KISsCompany)
+![Untitled](./Untitled.png)
 
 - KOSPI, KOSDAQ, KONEX 상장 기업에 대한 개요를 간단하게 검색할 수 있는 텔레그램 챗봇입니다.
 
@@ -16,52 +14,47 @@
 
 # 플랫폼 선정 이유
 
-| 플랫폼 | 금전적 이슈 | 검수 필요 | 이용자 수 | API 지원 |
-| --- | --- | --- | --- | --- |
-| 카카오톡 | O | O | 많음 | 중 |
-| FB Messenger | X | O | 많음 | 하 |
-| Slack | X | X | 적음 | 상 |
-| Telegram | X | X | 적음 | 상 |
+| 플랫폼       | 금전적 이슈 | 검수 필요 | 이용자 수 | API 지원 |
+| ------------ | ----------- | --------- | --------- | -------- |
+| 카카오톡     | O           | O         | 많음      | 중       |
+| FB Messenger | X           | O         | 많음      | 하       |
+| Slack        | X           | X         | 적음      | 상       |
+| Telegram     | X           | X         | 적음      | 상       |
 
 # 구현 기능
 
-- [x]  /help 명령어 만들어서 사용설명서 배포
-- [x]  서버 구현 시, local list에 상장기업명 826개 전부 저장
-    
-    ~~→ DB로 저장하면 가장 편하기는 하나.. 나중에 구현해보도록 하자~~
-    
-    → KRX KIND에서 상장기업정보 csv 파일 local에 저장하였음
-    
+- [x] /help 명령어 만들어서 사용설명서 배포
+- [x] 서버 구현 시, local list에 상장기업명 826개 전부 저장
+      ~~→ DB로 저장하면 가장 편하기는 하나.. 나중에 구현해보도록 하자~~
+      → KRX KIND에서 상장기업정보 csv 파일 local에 저장하였음
 
 ## 회사 검색 기능
 
-- [x]  사용자로부터 회사 이름 입력받기
-    - [x]  회사 이름이 전혀 겹치지 않으면 “검색 결과가 없습니다” return
-    - [x]  회사 이름이 조금이라도 겹치면 겹치는 기업명 return
-    - [x]  회사 이름이 완벽히 일치하면
-        - [x]  네이버 증권 → 종목 → 종목분석 → 기업개요를 scraping
-        - [x]  기업명(티커) 하이퍼링크 return
-        - [x]  기업 개요 return
-            - [x]  CSV에 있는 내용도 담아서 보낼 예정
-        - [x]  곧바로 이어서 유사 업종 기업 항목 랜덤으로 5개 정도 return
+- [x] 사용자로부터 회사 이름 입력받기
+  - [x] 회사 이름이 전혀 겹치지 않으면 “검색 결과가 없습니다” return
+  - [x] 회사 이름이 조금이라도 겹치면 겹치는 기업명 return
+  - [x] 회사 이름이 완벽히 일치하면
+    - [x] 네이버 증권 → 종목 → 종목분석 → 기업개요를 scraping
+    - [x] 기업명(티커) 하이퍼링크 return
+    - [x] 기업 개요 return
+      - [x] CSV에 있는 내용도 담아서 보낼 예정
+    - [x] 곧바로 이어서 유사 업종 기업 항목 랜덤으로 5개 정도 return
 
 ## 상장기업 랜덤 추천 기능
 
-- [x]  사용자로부터 /random 명령어 입력받기
-- [x]  네이버 증권 → 종목 → 종목분석 → 기업개요를 scraping
-- [x]  기업명(티커) 하이퍼링크 return
-- [x]  기업 개요 return
-    - [x]  CSV에 있는 내용도 담아서 보낼 예정
-- [x]  곧바로 이어서 유사 업종 기업 항목 랜덤으로 5개 정도 return
+- [x] 사용자로부터 /random 명령어 입력받기
+- [x] 네이버 증권 → 종목 → 종목분석 → 기업개요를 scraping
+- [x] 기업명(티커) 하이퍼링크 return
+- [x] 기업 개요 return
+  - [x] CSV에 있는 내용도 담아서 보낼 예정
+- [x] 곧바로 이어서 유사 업종 기업 항목 랜덤으로 5개 정도 return
 
 # 사용 라이브러리
 
 - pandas → DataFrame
 - Beautifulsoup4
 - python-telegram-bot
-    
-    [GitHub - python-telegram-bot/python-telegram-bot: We have made you a wrapper you can't refuse](https://github.com/python-telegram-bot/python-telegram-bot)
-    
+  [GitHub - python-telegram-bot/python-telegram-bot: We have made you a wrapper you can't refuse](https://github.com/python-telegram-bot/python-telegram-bot)
 
 # Trouble Shooting
 
